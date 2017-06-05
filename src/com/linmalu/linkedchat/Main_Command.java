@@ -42,7 +42,6 @@ public class Main_Command implements CommandExecutor
 			sender.sendMessage(ChatColor.GREEN + "채팅창 명령어아이템 : " + ChatColor.GOLD + "$CMDITEM$ , $CI$, $명령어아이템$");
 			sender.sendMessage(ChatColor.GREEN + "채팅창 명령어텍스트 : " + ChatColor.GOLD + "$CMDTEXT$ , $CT$, $명령어텍스트$");
 			sender.sendMessage(ChatColor.YELLOW + "제작자 : " + ChatColor.AQUA + "린마루(Linmalu)" + ChatColor.WHITE + " - http://blog.linmalu.com");
-			sender.sendMessage(ChatColor.YELLOW + "카페 : " + ChatColor.WHITE + "http://cafe.naver.com/craftproducer");
 		}
 		else
 		{
