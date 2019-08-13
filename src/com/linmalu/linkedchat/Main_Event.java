@@ -1,5 +1,7 @@
 package com.linmalu.linkedchat;
 
+import com.linmalu.library.api.LinmaluServer;
+import com.linmalu.library.api.LinmaluTellraw;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,22 +10,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.linmalu.library.api.LinmaluTellraw;
-import com.linmalu.library.api.LinmaluVersion;
-
 public class Main_Event implements Listener
 {
 	@EventHandler
-	public void Event(PlayerJoinEvent event)
+	public void event(PlayerJoinEvent event)
 	{
 		Player player = event.getPlayer();
 		if(player.isOp())
 		{
-			LinmaluVersion.check(Main.getMain(), player);
+			LinmaluServer.version(Main.getInstance(), player);
 		}
 	}
 	@EventHandler(priority = EventPriority.MONITOR)
-	public void Event(AsyncPlayerChatEvent event)
+	public void event(AsyncPlayerChatEvent event)
 	{
 		Player player = event.getPlayer();
 		LinmaluTellraw msg = new LinmaluTellraw(event.getFormat().replace("%1$s", player.getDisplayName()).replace("%2$s", event.getMessage()));

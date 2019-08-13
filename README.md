@@ -3,11 +3,11 @@
  - author : 린마루(Linmalu)
  - HomePage : http://blog.linmalu.com/
  - Language : JAVA8
- - Spigot : spigot-api-1.11.2-R0.1-SNAPSHOT-shaded
- - Version : 1.11.2.0
+ - Spigot : spigot-api-1.13.2-R0.1-SNAPSHOT-shaded
+ - Version : 1.13.2.0
 
 ###업데이트
-- 1.11.2버전으로 업데이트
+- 1.13.2버전으로 업데이트
 
 ###소개
 - 채팅창에 아이템 정보를 보여줄 수 있습니다.

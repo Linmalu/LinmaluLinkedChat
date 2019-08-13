@@ -1,5 +1,7 @@
 package com.linmalu.linkedchat;
 
+import com.linmalu.library.api.LinmaluServer;
+import com.linmalu.library.api.LinmaluTellraw;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,12 +10,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.linmalu.library.api.LinmaluTellraw;
-import com.linmalu.library.api.LinmaluVersion;
-
 public class Main_Command implements CommandExecutor
 {
-	public boolean onCommand(CommandSender sender, Command command, String label, String args[])
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
 		if(sender.isOp() && args.length >= 1)
 		{
@@ -34,7 +33,7 @@ public class Main_Command implements CommandExecutor
 			if(sender.isOp())
 			{
 				LinmaluTellraw.sendChat(sender, "/" + label + " ", ChatColor.GOLD + "/" + label + " <내용> (내용)..." + ChatColor.GRAY + " : 전체에게 메세지 보내기");
-				LinmaluVersion.check(Main.getMain(), sender);
+				LinmaluServer.version(Main.getInstance(), sender);
 			}
 			sender.sendMessage(ChatColor.GREEN + "채팅창 아이템 : " + ChatColor.GOLD + "$ITEM$ , $I$, $아이템$");
 			sender.sendMessage(ChatColor.GREEN + "채팅창 텍스트 : " + ChatColor.GOLD + "$TEXT$ , $T$, $텍스트$");
