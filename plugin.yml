@@ -9,5 +9,5 @@ depend: [LinmaluLibrary]
 commands:
     LinmaluLinkedChat:
         description: 'LinmaluLinkedChat'
-        aliases: [llc, lc, 채팅]
+        aliases: [llc, 채팅]
         usage: '명령어 : /<command>'
