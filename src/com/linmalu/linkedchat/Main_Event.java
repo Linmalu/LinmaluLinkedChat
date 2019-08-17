@@ -55,7 +55,7 @@ public class Main_Event extends LinmaluEvent
 		}
 		if(msg.isChange())
 		{
-			msg.sendMessage(event.getRecipients());
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> msg.sendMessage(event.getRecipients()));
 			Bukkit.getConsoleSender().sendMessage(event.getFormat().replace("%1$s", player.getDisplayName()).replace("%2$s", event.getMessage()));
 			event.setCancelled(true);
 		}
