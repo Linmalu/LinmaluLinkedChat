@@ -1,17 +1,31 @@
 package com.linmalu.linkedchat;
 
+import com.linmalu.library.api.LinmaluCommand;
+import com.linmalu.library.api.LinmaluMain;
 import com.linmalu.library.api.LinmaluServer;
 import com.linmalu.library.api.LinmaluTellraw;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Main_Command implements CommandExecutor
+import java.util.List;
+
+public class Main_Command extends LinmaluCommand
 {
+	public Main_Command(LinmaluMain main)
+	{
+		super(main);
+	}
+
+	@Override
+	protected List<String> TabCompleter(CommandSender sender, Command command, String alias, String[] args)
+	{
+		return null;
+	}
+
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
 		if(sender.isOp() && args.length >= 1)

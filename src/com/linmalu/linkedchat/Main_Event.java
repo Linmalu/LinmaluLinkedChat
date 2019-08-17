@@ -1,17 +1,23 @@
 package com.linmalu.linkedchat;
 
+import com.linmalu.library.api.LinmaluEvent;
+import com.linmalu.library.api.LinmaluMain;
 import com.linmalu.library.api.LinmaluServer;
 import com.linmalu.library.api.LinmaluTellraw;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class Main_Event implements Listener
+public class Main_Event extends LinmaluEvent
 {
+	public Main_Event(LinmaluMain main)
+	{
+		super(main);
+	}
+
 	@EventHandler
 	public void event(PlayerJoinEvent event)
 	{
@@ -21,6 +27,7 @@ public class Main_Event implements Listener
 			LinmaluServer.version(Main.getInstance(), player);
 		}
 	}
+
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void event(AsyncPlayerChatEvent event)
 	{
