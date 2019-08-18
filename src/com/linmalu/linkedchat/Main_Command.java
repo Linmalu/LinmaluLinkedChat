@@ -31,15 +31,15 @@ public class Main_Command extends LinmaluCommand
 			sender.sendMessage(ChatColor.RED + "권한이 없습니다.");
 			return true;
 		}
-		if(args.length >= 1)
+		if(args.length > 1)
 		{
-			LinmaluTellraw lt = new LinmaluTellraw(joinString(args, 0)).changeText().changeCmd().changeCmdText();
+			LinmaluTellraw lt = new LinmaluTellraw(joinString(args, 1)).changeText().changeCmd().changeCmdText();
 			if(sender instanceof Player)
 			{
 				Player player = (Player)sender;
 				lt.changeItem(player).changeCmdItem(player);
 			}
-			lt.sendMessage(LinmaluPlayer.getOnlinePlayers());
+			lt.sendMessage(LinmaluPlayer.getPlayers(args[0]));
 		}
 		else
 		{
